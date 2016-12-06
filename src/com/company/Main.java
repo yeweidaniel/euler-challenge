@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        long limit = 1000000L;
+        long limit = 1000000000000L;
         int count = 0;
 
         System.out.println("Computing...");
@@ -65,7 +65,9 @@ public class Main {
         return a * a * a * b;
     }
 
+    // fast way to get primes under integer n
     static ArrayList<Long> getPrimes2(final int target) {
+
         final boolean[] nonPrime = new boolean[target + 1];
 
         for (int i = 2; i <= Math.sqrt(target); ++i) {
@@ -85,6 +87,7 @@ public class Main {
         return primes;
     }
 
+    // slow way to get primes under n
     static ArrayList<Long> getPrimes1(long n) {
         ArrayList<Long> primes = new ArrayList<>();
         for (Long i = 2L; i < n; i++) {
